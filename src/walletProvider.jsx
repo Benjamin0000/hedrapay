@@ -12,7 +12,7 @@ const metadata = {
 }
 
 const ReactWalletsProvider = ({ children }) => {
-  const projectId = process.env.REACT_APP_WC_PROJECT_ID;
+  const projectId = import.meta.env.VITE_PROJECT_ID;
 
   return (
     <HWBridgeProvider

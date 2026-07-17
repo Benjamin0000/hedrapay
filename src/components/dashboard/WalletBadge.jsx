@@ -1,15 +1,23 @@
-import { ChevronDown, Copy, LogOut, Wallet } from "lucide-react";
+import { ChevronDown, Copy, LogOut, Wallet, Zap } from "lucide-react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
+import { useWallet, useAccountId } from '@buidlerlabs/hashgraph-react-wallets';
+import { HashpackConnector } from '@buidlerlabs/hashgraph-react-wallets/connectors';
+
+
+
 export default function WalletBadge() {
-  const accountId = "0.0.10492839";
+
+  const { isConnected, connect, disconnect, } = useWallet(HashpackConnector);
+  const { data: accountId } = useAccountId()
 
   const shortAccount =
-    accountId.substring(0, 8) +
+    accountId?.substring(0, 8) +
     "..." +
-    accountId.substring(accountId.length - 3);
+    accountId?.substring(accountId?.length - 3);
 
-  return (
+  return  isConnected ? (
+
     <Menu as="div" className="relative" style={{zIndex: 1000}}>
       <MenuButton className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-4 py-2 hover:shadow-md transition">
         <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100">
@@ -69,7 +77,7 @@ export default function WalletBadge() {
         </MenuItem>
 
         <MenuItem>
-          <button className="flex w-full items-center gap-3 rounded-xl p-3 text-red-500 hover:bg-red-50">
+          <button onClick={disconnect} className="flex w-full items-center gap-3 rounded-xl p-3 text-red-500 hover:bg-red-50">
             <LogOut size={18} />
 
             Disconnect Wallet
@@ -77,6 +85,17 @@ export default function WalletBadge() {
         </MenuItem>
 
       </MenuItems>
-    </Menu>
-  );
+    </Menu>) : (
+<button
+      onClick={connect}
+      className=" cusor-pointer w-full rounded-2xl bg-violet-600 py-4 font-semibold flex justify-center items-center hover:bg-violet-700 transition"
+    >
+      <span className="relative z-10 flex items-center gap-2 text-xs uppercase text-white tracking-widest font-white">
+         <Zap size={16} className="fill-current text-white animate-pulse" /> 
+         Connect Identity
+      </span>
+    </button>
+    )
+
+  
 }
