@@ -1,5 +1,5 @@
 import { HWBridgeProvider } from '@buidlerlabs/hashgraph-react-wallets'
-import { HashpackConnector, KabilaConnector } from '@buidlerlabs/hashgraph-react-wallets/connectors'
+import { HashpackConnector, KabilaConnector, HWCConnector } from '@buidlerlabs/hashgraph-react-wallets/connectors'
 import { HederaTestnet } from '@buidlerlabs/hashgraph-react-wallets/chains'
 
 import DAppLogo from './assets/vite.svg'
@@ -18,7 +18,7 @@ const ReactWalletsProvider = ({ children }) => {
     <HWBridgeProvider
       metadata={metadata}
       projectId={projectId}
-      connectors={[HashpackConnector, KabilaConnector]}
+      connectors={[HWCConnector]}
       chains={[HederaTestnet]}
     >
       {children}

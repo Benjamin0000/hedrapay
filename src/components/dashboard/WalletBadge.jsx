@@ -2,13 +2,13 @@ import { ChevronDown, Copy, LogOut, Wallet, Zap } from "lucide-react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 import { useWallet, useAccountId } from '@buidlerlabs/hashgraph-react-wallets';
-import { HashpackConnector } from '@buidlerlabs/hashgraph-react-wallets/connectors';
+import { HWCConnector } from '@buidlerlabs/hashgraph-react-wallets/connectors';
 
 
 
 export default function WalletBadge() {
 
-  const { isConnected, connect, disconnect, } = useWallet(HashpackConnector);
+  const { isConnected, connect, disconnect, } = useWallet(HWCConnector);
   const { data: accountId } = useAccountId()
 
   const shortAccount =
