@@ -31,12 +31,14 @@ export default function Navbar() {
               to="/"
               className="flex items-center gap-3"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 shadow-lg shadow-violet-500/30">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl ">
 
-                <Zap
+                {/* <Zap
                   className="text-white"
                   size={22}
-                />
+                /> */}
+
+                <img src="/icon.png" />
 
               </div>
 

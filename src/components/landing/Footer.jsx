@@ -20,9 +20,9 @@ export default function Footer() {
 
             <div className="flex items-center gap-3">
 
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl">
 
-                <Zap className="text-white" />
+                <img src="/icon.png" />
 
               </div>
 
