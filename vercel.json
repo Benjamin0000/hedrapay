@@ -1,3 +1,0 @@
-{
-  "buildCommand": "npm install --strict-peer-dependencies=false && npm run build"
-}
