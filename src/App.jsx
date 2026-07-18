@@ -6,6 +6,7 @@ import TvSubscription from "./pages/TvSubscription";
 import Internet from "./pages/Internet";
 import Transactions from "./pages/Transactions";
 import Rewards from "./pages/Rewards";
+import Landing from "./pages/Landing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
 
@@ -15,7 +16,8 @@ export default function App() {
     <BrowserRouter>
       <AppProvider>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/airtime" element={<Airtime />} />
           <Route path="/electricity" element={<Electricity />} />
           <Route path="/data" element={<Data />} />

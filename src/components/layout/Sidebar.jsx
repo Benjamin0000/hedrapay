@@ -15,7 +15,7 @@ const menu = [
   {
     title: "Dashboard",
     icon: LayoutDashboard,
-    path: "/",
+    path: "/dashboard",
   },
   {
     title: "Airtime",
@@ -58,9 +58,10 @@ export default function Sidebar() {
   return (
     <aside className="w-72 bg-slate-950 min-h-screen flex flex-col">
       <div className="px-8 py-8 border-b border-slate-800">
-        <h1 className="text-3xl font-bold text-white">
-          HedraPay
-        </h1>
+        <div className="text-3xl font-bold text-white">
+         <span style={{display:'inline-block', marginBottom:'-5px'}}> <img width={30} src="/icon.png"/> </span> 
+         <span style={{display:'inline-block'}}> HedraPay</span>
+        </div>
 
         <p className="text-slate-400 mt-2">
           Spend HBAR Anywhere
